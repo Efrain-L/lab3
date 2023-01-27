@@ -72,4 +72,41 @@ public void testReversedList() {
     assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ArrayExamples.reversed(input));
 }
 ```
-> * Y
+> * An input to the method that does not induce a failure is an array with the values `[1, 2, 1]`, since this array is the same when it is reversed, the test will pass sucessfuly.
+> * The corresponding JUnit test below.
+```java
+@Test
+public void testReversedListSame() {
+    int[] input = {1, 2, 1};
+    assertArrayEquals(new int[]{1, 2, 1}, ArrayExamples.reversed(input));
+}
+```
+> * Here is the a screenshot of running the JUnit test via the command line demonstrating the symptom of the bug.
+> ![image](junittest.png)
+> * The following two code blocks are a before and after from fixing the bug.
+```java
+  // BUGGED
+  // Returns a *new* array with all the elements of the input array in reversed
+  // order
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
+```java
+  // FIXED
+  // Returns a *new* array with all the elements of the input array in reversed
+  // order
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      newArray[i] = arr[arr.length - i - 1];
+    }
+    return newArray;
+  }
+```
+> * The code change fixes the issue since the problem with the original code was that it was assigning a new array with the reversed values, but was returning the original array object. This change returns the proper array, fixing the bug.
+
