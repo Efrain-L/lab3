@@ -49,3 +49,27 @@ The following two screenshots are examples of me using the StringServer web serv
 > * For this screenshot, the exact same methods are called, since the Handler class's method HandleRequest will be called again, this time with a different URI object being passed in. The relevant values for this example is also the same as the previous, where the runningString, URI, and path and query strings will be used.
 > * The relevant arguments to this method is also the URI object which will contain the entered url. The relevant values also includes the runningString object the URI object, and the paths and queries.
 > * Again, the only relevent value that will change as a result of this request will be the runningString object, which has been concatenated with the a new line and the corresponding part of the new query from the URI object argument.
+
+## Part 2 - Bugs
+> * The following *reversed* method contains one of the bugs present in the ArrayExamples.java file.
+```java
+  // Returns a *new* array with all the elements of the input array in reversed
+  // order
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
+> * A failure-inducing input for this method would be an array containing the integers `[1, 2, 3, 4, 5]`, with this input, the method would actually return the original array without any modifications. 
+> * The following is a test for such a failure-inducing input written as a JUnit test.
+```java
+@Test
+public void testReversedList() {
+    int[] input = {1, 2, 3, 4, 5};
+    assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ArrayExamples.reversed(input));
+}
+```
+> * Y
