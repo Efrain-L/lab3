@@ -3,6 +3,8 @@
 ## Part 1 - Web Server
 > * Here is the code for the web server called StringServer, which will track incoming requests to a single string.
 
+
+
 ```java
 import java.io.IOException;
 import java.net.URI;
@@ -40,6 +42,7 @@ class StringServer {
     }
 }
 ```
+
 
 The following two screenshots are examples of me using the StringServer web server with different values.
 > ![image](newmsgaft.png)
