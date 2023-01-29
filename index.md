@@ -3,6 +3,7 @@
 ## Part 1 - Web Server
 > * Here is the code for the web server called StringServer, which will track incoming requests to a single string.
 ```java
+// String Server and Handler
 import java.io.IOException;
 import java.net.URI;
 
