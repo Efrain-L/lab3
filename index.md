@@ -2,9 +2,7 @@
 *Lab report for weeks 2 and 3.*
 ## Part 1 - Web Server
 > * Here is the code for the web server called StringServer, which will track incoming requests to a single string.
-> 
-```java
-import java.io.IOException;
+```java import java.io.IOException;
 import java.net.URI;
 
 class Handler implements URLHandler {
