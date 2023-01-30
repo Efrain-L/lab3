@@ -2,6 +2,7 @@
 *Lab report for weeks 2 and 3.*
 ## Part 1 - Web Server
 * Here is the code for the web server called StringServer, which will track incoming requests to a single string.
+{% raw %}
 ```java
 // String Server and Handler
 import java.io.IOException;
@@ -40,6 +41,7 @@ class StringServer {
     }
 }
 ```
+{% endraw %}
 * The following two screenshots are examples of me using the StringServer web server with different values.
 ![image](newmsgaft.png)
 * The method or methods that will have been called from the Handler class used in the StringServer for this first screenshot will be the HandleRequest method.
