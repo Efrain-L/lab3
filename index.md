@@ -110,6 +110,6 @@ public void testReversedListSame() {
 ```
 * The code change fixes the issue since the problem with the original code was that it was assigning a new array with the reversed values, but was returning the original array object. This change returns the proper array, fixing the bug.
 
-## Part 3 - Something New
+## Part 3 - Something New 
 * Something new that I learned that I was not aware of before the labs in the past two weeks was the creation of a webserver in java, and how queries in website url's work. 
 * I learned how Web Servers can be set up in a Java program, and how, to some extent, websites manage url requests and how the server might respond to different paths and queries entered by users, and how it can be used to determine the behavior of the site/server.
