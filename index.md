@@ -54,7 +54,6 @@ The following two screenshots are examples of me using the StringServer web serv
 * For this screenshot, the exact same methods are called, since the Handler class's method HandleRequest will be called again, this time with a different URI object being passed in. The relevant values for this example is also the same as the previous, where the runningString, URI, and path and query strings will be used.
 * The relevant arguments to this method is also the URI object which will contain the entered url. The relevant values also includes the runningString object, the URI object, and the paths and queries.
 * Again, the only relevent value that will change as a result of this request will be the runningString object, which has been concatenated with the a new line and the corresponding part of the new query from the URI object argument. The final value of the runningString object would be `"Hello\n How are you\n Letsgoooo\n adding new message\n 0123456789\n"`
-* 
 
 ## Part 2 - Bugs
 > * The following *reversed* method contains one of the bugs present in the ArrayExamples.java file.
