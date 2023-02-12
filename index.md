@@ -49,8 +49,9 @@ class StringServer {
 * The only relevant value that will change after this will be the runningString object, since it will be concatenated with a new line character and the part of the query after the "=" sign. 
 ![image](newmsgnum.png)
 * For this screenshot, the exact same methods are called, since the Handler class's method HandleRequest will be called again, this time with a different URI object being passed in. The relevant values for this example is also the same as the previous, where the runningString, URI, and path and query strings will be used.
-* The relevant arguments to this method is also the URI object which will contain the entered url. The relevant values also includes the runningString object the URI object, and the paths and queries.
-* Again, the only relevent value that will change as a result of this request will be the runningString object, which has been concatenated with the a new line and the corresponding part of the new query from the URI object argument.
+* The relevant arguments to this method is also the URI object which will contain the entered url. The relevant values also includes the runningString object, the URI object, and the paths and queries.
+* Again, the only relevent value that will change as a result of this request will be the runningString object, which has been concatenated with the a new line and the corresponding part of the new query from the URI object argument. The final value of the runningString object would be `"Hello\n How are you\n Letsgoooo\n adding new message\n 0123456789\n"`
+* 
 
 ## Part 2 - Bugs
 > * The following *reversed* method contains one of the bugs present in the ArrayExamples.java file.
@@ -84,7 +85,7 @@ public void testReversedListSame() {
 }
 ```
 * Here is the a screenshot of running the JUnit test via the command line demonstrating the symptom of the bug.
-![image](junittestresubmit.png)
+![image](resubmitjunit.png)
 * The following two code blocks are a before and after from fixing the bug.
 ```java
   // BUGGED
@@ -110,7 +111,7 @@ public void testReversedListSame() {
     return newArray;
   }
 ```
-* The code change fixes the issue since the problem with the original code was that the old array was being assigned values from the newArray object, but since it has no initial values, it contains nothing but zeros in each of its indices. This change assigns the values of the proper array, newArray, to the values of the old array object, therefore fixing the bug.
+* The code change fixes the issue since the problem with the original code was that the old array was being assigned values from the newArray object, but since it has no initial values, it contained nothing but zeros in each of its indices. This change assigns the values of the proper array, newArray, to the values of the old array object, therefore fixing the bug.
 
 ## Part 3 - Something New 
 * Something new that I learned that I was not aware of before the labs in the past two weeks was the creation of a webserver in java, and how queries in website url's work. 
