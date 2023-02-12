@@ -84,7 +84,7 @@ public void testReversedListSame() {
 }
 ```
 * Here is the a screenshot of running the JUnit test via the command line demonstrating the symptom of the bug.
-![image](junittest.png)
+![image](junittestresubmit.png)
 * The following two code blocks are a before and after from fixing the bug.
 ```java
   // BUGGED
