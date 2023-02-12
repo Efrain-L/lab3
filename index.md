@@ -65,7 +65,7 @@ class StringServer {
     return arr;
   }
 ```
-* A failure-inducing input for this method would be an array containing the integers `[1, 2, 3, 4, 5]`, with this input, the method would actually return the original array without any modifications. 
+* A failure-inducing input for this method would be an array containing the integers `[1, 2, 3, 4, 5]`, with this input, the method would actually return an array of the same length containing all zeros. 
 * The following is a test for such a failure-inducing input written as a JUnit test.
 ```java
 @Test
@@ -74,13 +74,13 @@ public void testReversedList() {
     assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ArrayExamples.reversed(input));
 }
 ```
-* An input to the method that does not induce a failure is an array with the values `[1, 2, 1]`, since this array is the same when it is reversed, the test will pass sucessfuly.
+* An input to the method that does not induce a failure is an array with the values `[0, 0, 0]` since this array contains all zeros to begin with, the test will pass sucessfuly.
 * The corresponding JUnit test below.
 ```java
 @Test
 public void testReversedListSame() {
-    int[] input = {1, 2, 1};
-    assertArrayEquals(new int[]{1, 2, 1}, ArrayExamples.reversed(input));
+    int[] input = {0, 0, 0};
+    assertArrayEquals(new int[]{0, 0, 0}, ArrayExamples.reversed(input));
 }
 ```
 * Here is the a screenshot of running the JUnit test via the command line demonstrating the symptom of the bug.
@@ -110,7 +110,7 @@ public void testReversedListSame() {
     return newArray;
   }
 ```
-* The code change fixes the issue since the problem with the original code was that it was assigning a new array with the reversed values, but was returning the original array object. This change returns the proper array, fixing the bug.
+* The code change fixes the issue since the problem with the original code was that the old array was being assigned values from the newArray object, but since it has no initial values, it contains nothing but zeros in each of its indices. This change assigns the values of the proper array, newArray, to the values of the old array object, therefore fixing the bug.
 
 ## Part 3 - Something New 
 * Something new that I learned that I was not aware of before the labs in the past two weeks was the creation of a webserver in java, and how queries in website url's work. 
